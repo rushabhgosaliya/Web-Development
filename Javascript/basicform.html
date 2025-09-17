@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;  
+    }
+
+    .maindiv {
+        height: auto;
+        width: 400px;
+        background-color: rgb(175, 220, 248);
+        margin: auto;
+        margin-top: 50px;
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    h1 {
+        text-align: center;
+        color: rgb(46, 43, 43);
+        padding-top: 10px;
+    }
+
+    .label1 {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    .input1 input {
+        height: 20px;
+        width: 95%;
+        margin-top: 10px;
+    }
+
+    button {
+        height: 35px;
+        width: 130px;
+        background-color: tomato;
+        border-color: white;
+        margin-left: 130px;
+        margin-top: 50px;
+        color: white;
+        border-radius: 15px;
+    }
+
+    .outputdiv h3 {
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+</style>
+
+<body>
+    <div class="maindiv">
+        <h1>Basic Form</h1>
+        <hr style="color: black;">
+        <div class="label1">
+            <label for="">Enter Name:</label>
+        </div>
+        <div class="input1">
+            <input type="text" id="inputid1" placeholder="Enter Name" required>
+        </div>
+
+        <div class="label1">
+            <label for="">Enter Password:</label>
+        </div>
+        <div class="input1">
+            <input type="password" id="inputid2" placeholder="Enter Password">
+        </div>
+
+        <div class="label1">
+            <label for="">Enter Mobile no:</label>
+        </div>
+        <div class="input1">
+            <input type="tel" id="inputid3" placeholder="Enter Mobile No">
+        </div>
+        <div class="label1">
+            <label for="">Enter Specialization:</label>
+        </div>
+        <div class="input1">
+            <input type="text" id="inputid4" placeholder="Enter Specialization">
+        </div>
+        <button onclick="Fetchrecord()">Submit</button>
+    </div>
+
+    <div class="outputdiv">
+        <h3 id="output"></h3>
+    </div>
+
+    <script>
+        function Fetchrecord() {
+
+            // document.getElementById('output').innerHTML = "Your Name is: " + name;
+            let name = document.getElementById('inputid1').value;
+            let paswd = document.getElementById('inputid2').value;
+            let mono = document.getElementById('inputid3').value;
+            let special = document.getElementById('inputid4').value;
+
+            document.getElementById('output').innerHTML = "Your Name is: " + name +
+                " <br> Your Pasword is: " + paswd + " <br> Your Mobile no is: " + mono +
+                "<br> Your Specialization is: " + special;
+            clr();
+
+        }
+
+        function clr() {
+            document.getElementById('inputid1').value = "";
+            document.getElementById('inputid2').value = "";
+            document.getElementById('inputid3').value = "";
+            document.getElementById('inputid4').value = "";
+        }
+
+        // function Fetchrecord() {
+        //     let name = document.getElementById('inputid1').value;
+        //     let outputDiv = document.getElementById('output');
+
+        //     // Append a new line each time button is clicked
+        //     outputDiv.append("Your Name is: " + name, document.createElement("br"));
+        // } 
+    </script>
+</body>
+
+</html>

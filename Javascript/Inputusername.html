@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .maindiv{
+        height: auto;
+        width: 650px;
+        background-color: rgb(177, 225, 225);
+        margin: auto;
+        padding: 10px 20px;
+        margin-top: 100px;
+        border-radius: 15px;
+
+    }
+    h1{
+        text-align: center;
+    }
+    button{
+        height: 30px;
+        width: 120px;
+        background-color: tomato;
+        color: white;
+        font-weight: bold;
+        border-color: whitesmoke;
+        border-radius: 15px;
+    }
+   
+</style>
+
+<body>
+    <div class="maindiv">
+       <h1>User Quiz</h1>
+       <hr>
+        <p>1) Prompt the user to enter their full name. Generate a username for them based on the input. <br> Start
+            username with
+            @,followed by their first name initial, lastname and length.
+        </p>
+        <button onclick="myfunction()">UserName</button>
+        <h3 id="username"></h3>
+
+        <p>2) Count the number of words and vowels in a sentence
+        </p>
+        <button onclick="getnoofvowells()">Count vowell</button>
+        <h3 id="getvowells"></h3>
+        <h3 id="getvowellscount"></h3>
+
+        <p>3) Get initials of the names with in between 2 initial</p>
+        <button onclick="getInitials()">Get Initials</button>
+        <h3 id="getinitialid"></h3>
+    </div>
+
+    <script>
+        function myfunction() {
+            let name = prompt("Enter to generate username:")
+            console.log(name)
+            let trimname = name.trim().replace(/\s+/g, "");
+            console.log(trimname)
+            let namelength = trimname.length;
+            console.log(namelength)
+            let finalvar = "@" + trimname + namelength;
+            console.log(finalvar)
+
+            let nameofuser = document.getElementById('username');
+            nameofuser.append("Your generated username is:" + finalvar);
+        }
+
+        function getnoofvowells() {
+
+            let sentence = prompt("Enter the Sentence");
+            let countVowel = 0;
+            let vowels = 'aeiouAEIOU';
+
+            sentence = sentence.trim();
+
+            for (let ch of sentence) {
+                if (vowels.includes(ch)) {
+                    countVowel++;
+                }
+            }
+
+            getvowells.append("Orignal Sentence: " + sentence);
+            getvowellscount.append("Vowel Count: " + countVowel);
+        }
+
+        function getInitials() {
+            let init = document.getElementById('getinitialid')
+            let sentence = prompt("Enter the first name and last name: ")
+            let firstinitial = sentence[0][0];
+            let secondinitial = sentence[1][0];
+
+            init.append(firstinitial.toUpperCase() + "." + secondinitial.toUpperCase());
+        }
+
+        function myfunc() {
+            let chars = prompt("Please Enter First and Last Name: ").trim().split(' ');
+            let vow = chars.filter(c => "aeiou".includes(c));
+            console.log(vow);
+        }
+
+    </script>
+</body>
+
+</html>

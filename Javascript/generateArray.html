@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+   .maindiv{
+    height: auto;
+    width: 80%;
+    background-color: lightgrey;
+    padding: 10px;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 100px;
+   }
+   p{
+    font-size: 18px;
+    text-align: center;
+   }
+   button{
+    height: 35px;
+    width: 120px;
+    background-color: rgb(255, 126, 79);
+    margin-left: 530px;
+    border-color: white;
+    color: white;
+    font-weight: bold;
+    border-radius: 15px;
+   }
+   h3{
+    text-align: center;
+   }
+</style>
+
+<body>
+    <div class="maindiv">
+        <p>=> You have an Array of strings: ["apple,"banana","kiwi","grapr","bluebarry"].Create a new Array
+            containing only the string that have a <br> length greater than 5. Transform this filtered array into a new
+            array
+            where each string is capitalized.</p>
+        <button onclick="fruitfunc()">Generate Array</button>
+        <h3 id="fruitid"></h3>
+        <h3 id="fruitid2"></h3>
+        <h3 id="fruitid3"></h3>
+    </div>
+    <script>
+        function fruitfunc() {
+            let fruitarray = ['apple', 'banana', "kiwi", "grap", "bluebarry"]
+            let fruitshow = document.getElementById('fruitid');
+            fruitshow.append("Original String: " + fruitarray);
+
+            fruitid2.append("Long String: ")
+            fruitid3.append("Capitalized Long String: ")
+            for (let fruit of fruitarray) {
+
+                if (fruit.length > 5) {
+                    fruitid2.append(fruit + ",")
+                    fruitid3.append(fruit.toUpperCase() + ",")
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>
